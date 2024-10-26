@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RefreshCw } from 'lucide-react';
+import './App.css';
 
 const mathOperators = ['+', '-', '×', '÷'];
 
@@ -61,21 +62,21 @@ function App() {
   }, [digitsOfFirstNumber, digitsOfSecondNumber, selectedOperator]);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-2xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
+    <div className="app-container">
+      <div className="app-content">
+        <div className="controls">
           <button 
             onClick={handleRefresh}
-            className="flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg transition-colors"
+            className="refresh-button"
           >
             <RefreshCw size={20} />
           </button>
           <div>
-            <label className="block mb-1">First Num Digits</label>
+            <label className="label">First Num Digits</label>
             <select 
               value={digitsOfFirstNumber} 
               onChange={(e) => setDigitsOfFirstNumber(Number(e.target.value))}
-              className="p-2 border rounded"
+              className="select"
             >
               {[1, 2, 3, 4, 5].map(digit => (
                 <option key={digit} value={digit}>{digit}</option>
@@ -83,11 +84,11 @@ function App() {
             </select>
           </div>
           <div>
-            <label className="block mb-1">Second Num Digits</label>
+            <label className="label">Second Num Digits</label>
             <select 
               value={digitsOfSecondNumber} 
               onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
-              className="p-2 border rounded"
+              className="select"
             >
               {[1, 2, 3, 4, 5].map(digit => (
                 <option key={digit} value={digit}>{digit}</option>
@@ -95,11 +96,11 @@ function App() {
             </select>
           </div>
           <div>
-            <label className="block mb-1">Operation</label>
+            <label className="label">Operation</label>
             <select 
               value={selectedOperator} 
               onChange={(e) => setSelectedOperator(e.target.value)}
-              className="p-2 border rounded"
+              className="select"
             >
               {mathOperators.map(operator => (
                 <option key={operator} value={operator}>{operator}</option>
@@ -107,22 +108,22 @@ function App() {
             </select>
             <button 
             onClick={handleCheckAnswers}
-            className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg transition-colors"
+            className="check-button"
           >
             Check Answers
           </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="problems-grid">
           {problems.map((problem, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <div className="flex flex-col items-end font-mono text-xl">
-                <div className="mb-1">{problem.num1}</div>
-                <div className="flex items-center">
-                  <span className="mr-2">{problem.operator}</span>
+            <div key={index} className="problem-card">
+              <div className="problem-content">
+                <div className="problem-number">{problem.num1}</div>
+                <div className="problem-operation">
+                  <span className="operator">{problem.operator}</span>
                   <span>{problem.num2}</span>
                 </div>
-                <div className="w-full border-t-2 border-gray-400 mt-1 mb-2"></div>
+                <div className="problem-divider"></div>
                 <input 
                   type="text" 
                   value={answers[index]}
@@ -131,7 +132,7 @@ function App() {
                     newAnswers[index] = e.target.value;
                     setAnswers(newAnswers);
                   }}
-                  className={`h-8 w-full border-2 rounded p-1 ${correctness[index] ? 'border-gray-200' : 'border-red-500 text-red-500'}`}
+                  className={`answer-input ${correctness[index] ? 'correct' : 'incorrect'}`}
                 />
               </div>
             </div>

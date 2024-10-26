@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+.app-container {
+  min-height: 100vh;
+  background-color: #f7fafc;
+  padding: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-content {
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.refresh-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.refresh-button:hover {
+  background-color: #2563eb;
+}
+
+.label {
+  display: flex;
+  margin-bottom: 0.20rem;
+}
+
+.select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.check-button {
+  margin-left: 29px;
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.check-button:hover {
+  background-color: #059669;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .problems-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.problem-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.problem-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  font-family: monospace;
+  font-size: 1.25rem;
+}
+
+.problem-number {
+  margin-bottom: 0.25rem;
+}
+
+.problem-operation {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.operator {
+  margin-right: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.problem-divider {
+  width: 100%;
+  border-top: 2px solid #cbd5e0;
+  margin: 0.25rem 0;
+}
+
+.answer-input {
+  height: 2rem;
+  width: 100%;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.answer-input.correct {
+  border-color: #e5e7eb;
+}
+
+.answer-input.incorrect {
+  border-color: #ef4444;
+  color: #ef4444;
 }
