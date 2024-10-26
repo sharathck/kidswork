@@ -17,7 +17,7 @@ const generateProblem = (digitsOfFirstNumber, digitsOfSecondNumber, operator) =>
 };
 
 const generateProblems = (digitsOfFirstNumber, digitsOfSecondNumber, operator) => {
-  return Array(60).fill(null).map(() => generateProblem(digitsOfFirstNumber, digitsOfSecondNumber, operator));
+  return Array(50).fill(null).map(() => generateProblem(digitsOfFirstNumber, digitsOfSecondNumber, operator));
 };
 
 const calculateAnswer = (num1, num2, operator) => {
