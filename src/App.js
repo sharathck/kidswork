@@ -3,6 +3,17 @@ import { RefreshCw } from 'lucide-react';
 import './App.css';
 
 const mathOperators = ['+', '-', '×', '÷'];
+const validNumberOptions = [1, 2, 3, 4, 5];
+const validateDigits = (firstDigits, secondDigits) => {
+  return secondDigits <= firstDigits;
+};
+const getSecondNumberDigitsOptions = (firstDigits) => {
+  return Array.from({ length: firstDigits }, (_, i) => i + 1);
+};
+
+const getFirstNumberDigitsOptions = (secondDigits) => {
+  return validNumberOptions.filter(digit => validateDigits(digit, secondDigits));
+}
 
 const generateNumber = (digits) => {
   const min = Math.pow(10, digits - 1);
@@ -11,8 +22,11 @@ const generateNumber = (digits) => {
 };
 
 const generateProblem = (digitsOfFirstNumber, digitsOfSecondNumber, operator) => {
-  const num1 = generateNumber(digitsOfFirstNumber);
-  const num2 = generateNumber(digitsOfSecondNumber);
+  let num1 = generateNumber(digitsOfFirstNumber);
+  let num2 = generateNumber(digitsOfSecondNumber);
+  if (num2 > num1) {
+    [num1, num2] = [num2, num1];
+  }
   return { num1, num2, operator };
 };
 
@@ -82,7 +96,7 @@ function App() {
               onChange={(e) => setDigitsOfFirstNumber(Number(e.target.value))}
               className="select"
             >
-              {[1, 2, 3, 4, 5].map(digit => (
+              {getFirstNumberDigitsOptions(digitsOfSecondNumber).map(digit => (
                 <option key={digit} value={digit}>{digit}</option>
               ))}
             </select>
@@ -90,11 +104,11 @@ function App() {
           <div>
             <label className="label">Second Num Digits</label>
             <select 
-              value={digitsOfSecondNumber} 
-              onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
-              className="select"
-            >
-              {[1, 2, 3, 4, 5].map(digit => (
+                value={digitsOfSecondNumber} 
+                onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
+                className="select"
+              >
+              {getSecondNumberDigitsOptions(digitsOfFirstNumber).map(digit => (
                 <option key={digit} value={digit}>{digit}</option>
               ))}
             </select>
