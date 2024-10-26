@@ -57,6 +57,10 @@ function App() {
     setCorrectness(newCorrectness);
   };
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   useEffect(() => {
     handleRefresh();
   }, [digitsOfFirstNumber, digitsOfSecondNumber, selectedOperator]);
@@ -110,7 +114,13 @@ function App() {
             onClick={handleCheckAnswers}
             className="check-button"
           >
-            Check Answers
+            Check
+          </button>
+          <button 
+            onClick={handlePrint}
+            className="print-button"
+          >
+            Print
           </button>
           </div>
         </div>
