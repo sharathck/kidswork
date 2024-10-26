@@ -1,7 +1,7 @@
 .app-container {
   min-height: 100vh;
   background-color: #f7fafc;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .app-content {
@@ -82,7 +82,7 @@
   background-color: white;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 3px rgba(84, 78, 78, 0.942);
 }
 
 .problem-content {
@@ -103,7 +103,7 @@
 }
 
 .operator {
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
 }
 
 .problem-divider {
@@ -115,6 +115,7 @@
 .answer-input {
   height: 2rem;
   width: 100%;
+  font-size: 1.25rem;
   border: 2px solid #e5e7eb;
   border-radius: 0.25rem;
   padding: 0.25rem;

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { RefreshCw } from 'lucide-react';
 import './App.css';
 
-const mathOperators = ['+', '-', '×', '÷'];
-const validNumberOptions = [1, 2, 3, 4, 5];
+const mathOperators = ['+', '-', '×', '÷', '%'];
+const validNumberOptions = [1, 2, 3, 4, 5, 6, 7];
 const validateDigits = (firstDigits, secondDigits) => {
   return secondDigits <= firstDigits;
 };
@@ -44,6 +44,8 @@ const calculateAnswer = (num1, num2, operator) => {
       return num1 * num2;
     case '÷':
       return num1 / num2;
+    case '%':
+      return num1 % num2;
     default:
       return null;
   }
