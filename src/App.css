@@ -8,6 +8,12 @@
   margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+  .app-content {
+   max-width: 100%;
+  }
+}
+
 .controls {
   display: flex;
   max-width: 60rem;
