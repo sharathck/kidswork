@@ -113,7 +113,7 @@ function App() {
               ))}
             </select> 
           </label>
-          <label className="label">Operator
+          <label className="label">Oper
             <select 
               value={selectedOperator} 
               onChange={(e) => setSelectedOperator(e.target.value)}
