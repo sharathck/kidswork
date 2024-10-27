@@ -91,7 +91,7 @@ function App() {
           >
             <RefreshCw size={20} />
           </button>
-          <label className="label">First Num Digits
+          <label className="label">Top Digits
             <select 
               value={digitsOfFirstNumber} 
               onChange={(e) => setDigitsOfFirstNumber(Number(e.target.value))}
@@ -102,7 +102,7 @@ function App() {
               ))}
             </select>
           </label>
-          <label className="label">Second Num Digits
+          <label className="label">Bottom Digits
             <select 
               value={digitsOfSecondNumber} 
               onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
