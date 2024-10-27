@@ -91,7 +91,7 @@ function App() {
           >
             <RefreshCw size={20} />
           </button>
-            <label className="label">First Num Digits
+          <label className="label">First Num Digits
             <select 
               value={digitsOfFirstNumber} 
               onChange={(e) => setDigitsOfFirstNumber(Number(e.target.value))}
@@ -101,18 +101,19 @@ function App() {
                 <option key={digit} value={digit}>{digit}</option>
               ))}
             </select>
-            </label>
-            <label className="label">Second Num Digits
+          </label>
+          <label className="label">Second Num Digits
             <select 
-                value={digitsOfSecondNumber} 
-                onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
-                className="select"
-              >
+              value={digitsOfSecondNumber} 
+              onChange={(e) => setDigitsOfSecondNumber(Number(e.target.value))}
+              className="select"
+            >
               {getSecondNumberDigitsOptions(digitsOfFirstNumber).map(digit => (
                 <option key={digit} value={digit}>{digit}</option>
               ))}
-            </select> </label>
-            <label className="label">Operator
+            </select> 
+          </label>
+          <label className="label">Operator
             <select 
               value={selectedOperator} 
               onChange={(e) => setSelectedOperator(e.target.value)}
@@ -122,19 +123,21 @@ function App() {
                 <option key={operator} value={operator}>{operator}</option>
               ))}
             </select>
-            </label>
+          </label>
+          <div className="button-group">
             <button 
-            onClick={handleCheckAnswers}
-            className="check-button"
-          >
-            Check
-          </button>
-          <button 
-            onClick={handlePrint}
-            className="print-button"
-          >
-            Print
-          </button>
+              onClick={handleCheckAnswers}
+              className="check-button"
+            >
+              Check
+            </button>
+            <button 
+              onClick={handlePrint}
+              className="print-button"
+            >
+              Print
+            </button>
+          </div>
         </div>
         <div className="problems-grid">
           {problems.map((problem, index) => (
