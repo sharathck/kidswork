@@ -11,6 +11,7 @@
 .controls {
   display: flex;
   max-width: 60rem;
+  margin-bottom: 0.5rem;
 }
 
 .refresh-button {
