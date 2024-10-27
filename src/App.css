@@ -1,70 +1,71 @@
 .app-container {
   min-height: 100vh;
   background-color: #f7fafc;
-  padding: 1rem;
 }
 
 .app-content {
-  max-width: 40rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
 .controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+  max-width: 60rem;
 }
 
 .refresh-button {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
   background-color: #3b82f6;
   color: white;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s;
+  margin-right: 0.5rem;
 }
 
 .refresh-button:hover {
-  background-color: #2563eb;
+  background-color: #183167;
 }
 
 .label {
   display: flex;
-  margin-bottom: 0.20rem;
+  align-items: center;
+  border: 1px dotted #000;
 }
 
 .select {
-  padding: 0.5rem;
+  padding: 0.3rem;
   border: 1px solid #d1d5db;
   border-radius: 0.25rem;
   font-size: 1.3rem;
 }
-
-.print-button {
-  margin-left: 10px;
-  background-color: #dedfd4;
-  color: rgb(23, 1, 1);
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
 .check-button {
-  margin-left: 19px;
+  align-items: center;
   background-color: #10b981;
   color: white;
-  padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
-  font-size: 16px;
+  font-size: 22px;
+  transition: background-color 0.3s;
+  margin-left: 0.5rem;
+}
+
+.print-button {
+  margin-left: 0.5rem;
+  background-color: #dedfd4;
+  color: rgb(23, 1, 1);
+  border-radius: 0.5rem;
+  font-size: 22px;
   transition: background-color 0.3s;
 }
 
+
 .check-button:hover {
-  background-color: #059669;
+  background-color: #115f46;
+}
+
+.print-button:hover {
+  background-color: #f2f5f4;
 }
 
 .problems-grid {
