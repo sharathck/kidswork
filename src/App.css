@@ -138,16 +138,25 @@
   border: 2px solid #e5e7eb;
   border-radius: 0.25rem;
   padding: 0.25rem;
+  box-shadow: 0 0 6px 2px rgba(169, 169, 169, 0.3); /* Default ash/gray shadow */
+  text-align: right; /* Right align the text in the input */
 }
 
 .answer-input.correct {
   border-color: #e5e7eb;
+  box-shadow: 0 0 10px 3px rgba(0, 255, 0, 0.4);
+  border-color: #4caf50;
+  transition: box-shadow 0.3s ease;
 }
 
 .answer-input.incorrect {
   border-color: #ef4444;
   color: #ef4444;
+  box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.6);
+  border-color: #f44336;
+  transition: box-shadow 0.3s ease;
 }
+
 /* Add this at the end of your App.css file */
 @media print {
   .app-container {

@@ -58,11 +58,13 @@ function App() {
   const [selectedOperator, setSelectedOperator] = useState('-');
   const [answers, setAnswers] = useState(Array(60).fill(''));
   const [correctness, setCorrectness] = useState(Array(60).fill(true));
+  const [answersChecked, setAnswersChecked] = useState(false);
 
   const handleRefresh = () => {
     setProblems(generateProblems(digitsOfFirstNumber, digitsOfSecondNumber, selectedOperator));
     setAnswers(Array(60).fill(''));
     setCorrectness(Array(60).fill(true));
+    setAnswersChecked(false);
   };
 
   const handleCheckAnswers = () => {
@@ -71,6 +73,7 @@ function App() {
       return parseFloat(answers[index]) === correctAnswer;
     });
     setCorrectness(newCorrectness);
+    setAnswersChecked(true);
   };
 
   const handlePrint = () => {
@@ -157,7 +160,9 @@ function App() {
                     newAnswers[index] = e.target.value;
                     setAnswers(newAnswers);
                   }}
-                  className={`answer-input ${correctness[index] ? 'correct' : 'incorrect'}`}
+                  className={answersChecked ? 
+                    `answer-input ${correctness[index] ? 'correct' : 'incorrect'}` : 
+                    'answer-input'}
                 />
               </div>
             </div>
